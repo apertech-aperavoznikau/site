@@ -8672,7 +8672,8 @@ h1, h2, h3, h4, h5,
       .story-wrap .img {
         margin-bottom: 30px; } }
   .story-wrap .text {
-    width: 100%; }
+    width: 100%;
+    color: black}
     @media (min-width: 992px) {
       .story-wrap .text {
         width: calc(100% - 300px); } }
