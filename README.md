@@ -86,13 +86,35 @@ Project License: TODO — Add a top-level LICENSE file specifying the license fo
 - If adding analytics, cookie consent, or third-party embeds, update this README with configuration and privacy considerations.
 - For SEO and social sharing, add/update meta tags and favicons accordingly.
 
-## Cookie Consent (EU GDPR/ePrivacy)
-This site uses Cookiebot to provide a cookie consent banner and prior consent for non-essential cookies.
 
-- Consent provider: Cookiebot (consent.cookiebot.com)
-- Implementation: see `index.html` bottom. Auto-blocking mode is enabled.
-- Categorization:
-  - Necessary: core site JS/CSS
-  - Preferences: Google Maps API and `js/google-map.js` (blocked until consent)
-- Manage settings: use the "Cookie Settings" link in the footer to reopen the dialog.
-- To add other third-party scripts, mark them with `type="text/plain"`, add `data-cookieconsent` with the appropriate category (e.g., `statistics`, `marketing`), and move the original URL to `data-src`.
+
+## Cookie Consent (GDPR/ePrivacy)
+This site implements a lightweight, self‑hosted cookie consent.
+
+- Default behavior: Only strictly necessary functionality is enabled. Non‑essential features (e.g., Google Maps) are disabled until the user gives consent.
+- Categories:
+  - Necessary — always on; required for basic site operation
+  - Preferences — enables Google Maps and similar embeds
+- Storage: User choices are stored in localStorage under key `cookie_consent_v1`.
+- Manage: Users can reopen the preferences dialog anytime via the “Cookie Settings” link in the footer.
+
+Implementation details
+- Script: `js/consent.js` renders a small bottom banner (Accept all / Reject non‑essential / Customize) and a preferences modal. It conditionally loads any script tags declared with `type="text/plain"` and a `data-consent` category when that category is allowed.
+- Integration on pages: The Google Maps scripts are declared as blocked placeholders and will only load after consent:
+
+```
+<script type="text/plain" data-consent="preferences" data-src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&sensor=false"></script>
+<script type="text/plain" data-consent="preferences" data-src="js/google-map.js"></script>
+```
+
+- Include order: `js/consent.js` is included before `js/i18n.js` and `js/main.js` so it can enforce blocking early.
+- i18n: The consent UI supports EN/RU automatically based on the language switcher selection.
+
+Registering a new non‑essential script
+1. Replace the script tag with a blocked placeholder:
+   - Original: `<script src="https://example.com/widget.js"></script>`
+   - Blocked:  `<script type="text/plain" data-consent="preferences" data-src="https://example.com/widget.js"></script>`
+2. If you need a separate category (e.g., analytics), extend `SUPPORTED_CATS` and UI texts in `js/consent.js`, and adjust logic accordingly.
+
+Resetting consent (for testing)
+- Open DevTools and run: `localStorage.removeItem('cookie_consent_v1')`, then refresh the page.
