@@ -200,7 +200,25 @@
 	};
 	contentWayPoint();
 
-
+	// Highlight current page in the top nav
+	(function(){
+		try{
+			var page = document.body && document.body.getAttribute('data-page');
+			var map = { index: 'index.html', mentoring: 'mentoring.html', psychology: 'psychology.html' };
+			var href = map[page] || '';
+			var links = document.querySelectorAll('#top-nav a[href]');
+			links.forEach(function(a){
+				if (a.closest('[data-lang-switch]')) return; // skip language links
+				if (href && a.getAttribute('href') === href){
+					a.classList.add('active');
+					a.setAttribute('aria-current','page');
+				} else {
+					a.classList.remove('active');
+					a.removeAttribute('aria-current');
+				}
+			});
+		} catch(e){}
+	})();
 
 })(jQuery);
 
