@@ -220,16 +220,5 @@
 		} catch(e){}
 	})();
 
-	// Apply striped backgrounds to content sections
-	(function(){
-		try{
-			var sections = Array.prototype.slice.call(document.querySelectorAll('section.ftco-section, section.ftco-counter'));
-			sections.forEach(function(sec, idx){
-				sec.classList.remove('stripe-odd','stripe-even');
-				sec.classList.add((idx % 2 === 0) ? 'stripe-odd' : 'stripe-even');
-			});
-		} catch(e){}
-	})();
-
 })(jQuery);
 
