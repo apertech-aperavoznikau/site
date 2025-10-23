@@ -39,6 +39,13 @@
       'common.online': 'Online',
       'mentoring.pricing.li1': 'Focused on your current goals',
       'mentoring.book.h2': 'Book a mentoring session via your preferred app:',
+        'mentoring.spec.h2': 'What I work with',
+        'mentoring.spec.item1.h3': 'Career strategy and growth plans',
+        'mentoring.spec.item1.p': 'Clarifying goals, building a roadmap, and developing key competencies for the next career step.',
+        'mentoring.spec.item2.h3': 'Leadership and communication',
+        'mentoring.spec.item2.p': 'Feedback culture, stakeholder management, decision‑making, delegation, and team dynamics.',
+        'mentoring.spec.item3.h3': 'Productivity and resilience',
+        'mentoring.spec.item3.p': 'Focus and priorities, sustainable performance, burnout prevention, and stress‑resilience.',
 
       // Psychology
       'title.psychology': 'Consulting Psychologist | Artsiom Peravoznikau',
@@ -89,9 +96,9 @@
       'mentoring.ul.li2': 'Индивидуальное менторство для инженеров, тимлидов, EM и Heads',
       'mentoring.ul.li3': 'Темы: планы роста, культура обратной связи, работа со стейкхолдерами, фокус, стрессоустойчивость',
       'mentoring.counter1': 'лет в лидерстве в IT',
-      'mentoring.counter2': 'часов 1:1 сессий',
-      'mentoring.counter3': 'долгосрочных подопечных',
-      'mentoring.pricing.h2': 'Менторство — цены',
+      'mentoring.counter2': 'часов индивидуальных сессий',
+      'mentoring.counter3': 'долгосрочных клиентов',
+      'mentoring.pricing.h2': 'Цены',
       'common.session': 'Сессия',
       'common.minutes50': '50 минут',
       'common.online': 'Онлайн',
@@ -105,7 +112,7 @@
       'psych.ul.li1': 'Психологическое образование — Восточно‑Европейский институт психоанализа',
       'psych.ul.li2': 'Специализация: кризисы и травмы — интегративный гештальт‑подход',
       'psych.ul.li3': 'Опыт работы с кризисами и травмой, интеграция разных модальностей',
-      'psych.counter1': 'года(лет) частной практики',
+      'psych.counter1': 'лет частной практики',
       'psych.counter2': 'часов личных сессий',
       'psych.counter3': 'клиентов',
       'psych.spec.h2': 'С чем я работаю',
@@ -117,7 +124,15 @@
       'psych.spec.item3.p': 'Поддержка в трудные времена, когда важно найти силы и ресурсы для выхода из кризиса и вернуть ощущение опоры.',
       'psych.pricing.h2': 'Психология — цены',
       'psych.pricing.li1': 'Работа с актуальным запросом',
-      'psych.book.h2': 'Для записи напишите мне в:'
+      'psych.book.h2': 'Для записи напишите мне в:',
+        'mentoring.spec.h2': 'С чем я работаю',
+        'mentoring.spec.item1.h3': 'Карьерная стратегия и планы роста',
+        'mentoring.spec.item1.p': 'Определение целей, дорожная карта и развитие ключевых компетенций для следующего шага.',
+        'mentoring.spec.item2.h3': 'Лидерство и коммуникация',
+        'mentoring.spec.item2.p': 'Культура обратной связи, управление стейкхолдерами, принятие решений, делегирование и командная динамика.',
+        'mentoring.spec.item3.h3': 'Продуктивность и устойчивость',
+        'mentoring.spec.item3.p': 'Фокус и приоритеты, устойчивая эффективность, профилактика выгорания и стрессоустойчивость.',
+
     }
   };
 
